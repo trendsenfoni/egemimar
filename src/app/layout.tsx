@@ -36,19 +36,19 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       <body className={inter.className} suppressHydrationWarning >
 
         <LayoutClientSide />
-        <ThemeProvider
+        {/* <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem={true}
           disableTransitionOnChange
 
-        >
-          <Suspense >
-            {children}
+        > */}
+        <Suspense >
+          {children}
 
-            <Toaster />
-          </Suspense>
-        </ThemeProvider>
+          <Toaster />
+        </Suspense>
+        {/* </ThemeProvider> */}
 
       </body>
     </html>
