@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
 import { Button } from '@/components/ui/button'
 import { MenuSquareIcon } from 'lucide-react'
+import { WhatsappIcon } from '@/components/icons/svg-icons'
 
 export function MainHeader() {
   return (<>
@@ -11,16 +12,24 @@ export function MainHeader() {
         <Link href="/" className="flex items-center space-x-2 max-w-48 md:max-w-64">
           <Image src={'/img/egemimar-logo.png'} width={767} height={216} alt='logo' />
         </Link>
-        <div className="hidden md:flex space-x-4 justify-end">
+        <div className="hidden md:flex space-x-4 justify-end items-center">
           <Link href="/" className="text-gray-600 hover:text-gray-800">Ana Sayfa</Link>
           <Link href="#features" className="text-gray-600 hover:text-gray-800">Hizmetler</Link>
           <Link href="#projects" className="text-gray-600 hover:text-gray-800">Projeler</Link>
           {/* TODO: Hakkimizda bolumu ayri bir sayfa olarak gelistirilecektir */}
           <Link href="#" className="text-gray-600 hover:text-gray-800">Hakkımızda</Link>
           <Link href="#call-to-action" className="text-gray-600 hover:text-gray-800">İletişim</Link>
+          <Link className='w-7 h-7' href={process.env.NEXT_PUBLIC_WHATSAPP_LINK || ''} target='_blank'>
+            <WhatsappIcon />
+          </Link>
         </div>
         {/* TODO: Burada mobile menude scroll yaparken bi sikinti var gibi */}
-        <div className='flex md:hidden'><MobileMenu /></div>
+        <div className='flex md:hidden gap-4 items-center'>
+          <Link className='w-8 h-8' href={process.env.NEXT_PUBLIC_WHATSAPP_LINK || ''} target='_blank'>
+            <WhatsappIcon />
+          </Link>
+          <MobileMenu />
+        </div>
       </div>
     </header>
   </>)

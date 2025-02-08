@@ -17,7 +17,7 @@ export function MainHero() {
         <p className="text-xl mb-8">Konut ve ticari projeler için uzman inşaat hizmetleri</p>
 
         <Link
-          href="https://api.whatsapp.com/send?phone=905514830723&text=EgeMimar%20teklif%20almak%20istiyorum"
+          href={process.env.NEXT_PUBLIC_WHATSAPP_LINK || ''}
           target='_blank'
           className="bg-yellow-500 text-gray-900 px-8 py-3 rounded-md font-semibold hover:bg-gray-800 transition duration-300 flex max-w-64 gap-2"
         >

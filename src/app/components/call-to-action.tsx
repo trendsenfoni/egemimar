@@ -9,7 +9,7 @@ export function MainCallToAction() {
         <p className="text-xl mb-8">Ücretsiz danışmanlık ve teklif için bugün bize ulaşın.</p>
         <div className='flex justify-center'>
           <Link
-            href="https://api.whatsapp.com/send?phone=905514830723&text=EgeMimar%20teklif%20almak%20istiyorum"
+            href={process.env.NEXT_PUBLIC_WHATSAPP_LINK || ''}
             target='_blank'
             className="bg-gray-900 text-white px-8 py-3 rounded-md font-semibold hover:bg-gray-800 transition duration-300 flex max-w-64 gap-2"
           >
